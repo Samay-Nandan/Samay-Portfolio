@@ -1,41 +1,46 @@
 // All site copy lives here. Edit this file, not the components.
-// Lines marked TODO need you to confirm a fact before the site goes live.
 
 import type { DiagramSpec } from "@/components/Diagram";
 
 export const profile = {
   name: "Samay Nandan",
   short: "Samay",
-  role: "Team Lead",
-  typed: ["Technical project manager", "Team Lead", "Engineering & delivery", "Senior full stack engineer", "Generative AI builder"],
+  role: "Team Lead – MERN & AI | Systems Architect",
+  typed: [
+    "Team Lead – MERN & AI",
+    "Generative & Agentic AI Architect",
+    "Distributed Systems Engineer",
+    "Full-Stack Tech Lead",
+    "Engineering Leadership",
+  ],
   intro:
-    "I lead teams that ship. I take client projects from the first requirement to a successful release, keeping the team focused and the client informed.",
-  location: "Chandigarh Tricity, open to remote",
+    "Full-stack and AI engineering leader with 6 years of experience architecting distributed MERN microservices, mission-critical IoT/healthcare systems, and production-grade Agentic AI pipelines. Directing cross-functional squads with end-to-end delivery ownership.",
+  location: "Chandigarh Tricity, open to remote / hybrid",
   email: "samaynandan@gmail.com",
   phone: "+91 98156 91084",
   github: "https://github.com/Samay-Nandan",
-  linkedin: "https://www.linkedin.com/in/samay-nandan", // TODO: confirm your real LinkedIn URL
-  resume: "/Samay_Nandan_Resume.pdf?v=2026-11-02",
+  linkedin: "https://www.linkedin.com/in/samay-nandan",
+  resume: "/Samay_Nandan_Resume.pdf?v=2026-11-25",
 };
 
 export const expertise = [
   {
-    title: "People & team management",
+    title: "Engineering leadership & delivery",
     accent: "pink",
     icon: "lead",
-    body: "Lead a team of engineers across concurrent projects: allocate people by skill and capacity, run sprints, review code, and grow juniors into people who own their work.",
+    body: "Direct cross-functional squads of 12+ developers, QA, and DevOps engineers: sprint execution, architecture blueprinting, code reviews, mentorship, and high-quality on-time delivery across international client accounts.",
   },
   {
-    title: "Project & delivery management",
+    title: "Distributed systems & telemetry",
     accent: "cyan",
     icon: "plan",
-    body: "Requirement analysis and BRD/SRS documents, estimates and proposals, milestone plans with clear acceptance, scope and change control, risk tracking and client sign-off, for Upwork and direct clients worldwide.",
+    body: "Microservices architecture across Node.js, NestJS, React/Next.js, and AWS. High-concurrency message queuing with RabbitMQ & BullMQ, real-time hardware telemetry over TCP/serial, and Electron.js desktop integration.",
   },
   {
-    title: "Technical leadership",
+    title: "Generative & Agentic AI",
     accent: "orange",
     icon: "code",
-    body: "Architecture and code review across Node.js, React/Next.js, PostgreSQL and AWS. Generative AI features with OpenAI, ElevenLabs and AssemblyAI. Production health and incident fixes.",
+    body: "Production-grade autonomous agentic workflows, multi-agent routing with function-calling LLMs, high-accuracy RAG pipelines with vector embeddings, and speech AI pipelines with AssemblyAI & ElevenLabs.",
   },
 ];
 
@@ -74,21 +79,25 @@ const snake: [string, string][] = [["a", "b"], ["b", "c"], ["c", "d"], ["d", "e"
 // Featured: public products with live screenshots.
 export const featured: Project[] = [
   {
-    slug: "trugamer",
-    name: "TruGamer",
-    kind: "Gaming data platform",
-    link: { href: "https://trugamer.com", label: "trugamer.com" },
-    shots: { desktop: "/projects/trugamer-desktop.webp", mobile: "/projects/trugamer-mobile.webp" },
+    slug: "smartcaller",
+    name: "SmartCaller",
+    kind: "Healthcare: nurse-call & alarm telemetry platform",
+    link: { href: "https://www.smartcaller.com.au/", label: "smartcaller.com.au" },
+    shots: { desktop: "/projects/smartcaller-desktop.webp", mobile: "/projects/smartcaller-mobile.webp" },
     summary:
-      "A gaming platform indexing 369,000+ games across every platform and region, kept in sync with the IGDB API without hammering it on every page view.",
-    role: "Built and deployed the platform; designed the data-sync and caching strategy.",
+      "A mission-critical healthcare platform: on-premise life-safety nurse-call and alarm telemetry system for Australian hospitals and aged care. Ingests real-time hardware alarm telemetry over TCP/serial, RabbitMQ distributed message brokering, and self-updating Electron.js desktop consoles with sub-second alert escalation and zero message loss.",
+    role: "Led the engineering team and delivery across the whole platform: on-site server, Electron desktop console, dashboard, cloud licensing portal, and mobile app. Owned architecture decisions and release quality.",
     highlights: [
-      "Sync service pulling IGDB metadata into PostgreSQL",
-      "Caching layer that serves hot queries without touching IGDB",
-      "SideKick: an AI assistant answering player questions over the database (Perplexity API)",
+      "Hardware telemetry: Ademco and Ampac panel parsers over TCP and serial ports, output to Salcom pagers and Bestlite LED signs",
+      "Distributed message brokering: real-time alarm intake, escalation chains, and live updates over RabbitMQ, BullMQ, Redis, and Socket.IO",
+      "Cross-platform desktop: self-updating Electron.js operator consoles and Windows installer released via CI",
+      "Full operations suite: live alarms, paging devices, shift management, site structure, reporting and audit logs, with new-site wizard",
+      "Security: JWT with OTP verification and role-based permissions (CASL) for superusers, admins, staff and installers",
+      "Cloud tier & reliability: offline-first sync architecture pairing local NestJS/PostgreSQL nodes with cloud licensing, backed by Prometheus and Grafana monitoring",
+      "React Native companion app with a duress button, plus an ElevenLabs-powered assistant in the dashboard",
     ],
-    stack: ["Node.js", "PostgreSQL", "REST", "Caching", "Perplexity API"],
-    diagram: { width: 760, height: 200, nodes: row("IGDB API", "Sync worker", "PostgreSQL", "Cache layer", "REST API", "trugamer.com", ["b", "d"]), edges: snake },
+    stack: ["NestJS", "RabbitMQ", "Electron.js", "Fastify", "Prisma", "PostgreSQL", "BullMQ", "Redis", "Socket.IO", "Next.js", "React Native", "Prometheus", "Grafana"],
+    diagram: { width: 760, height: 200, nodes: row("Nurse-call panels", "Alarm ingest", "Escalation engine", "Socket.IO gateway", "Pagers & dashboards", "Cloud sync (outbox)", ["b", "c"]), edges: snake },
   },
   {
     slug: "podagain",
@@ -101,37 +110,31 @@ export const featured: Project[] = [
     role: "Built the generation pipeline and automated it end to end.",
     highlights: [
       "Transcription and speaker identification with AssemblyAI",
-      "Voice synthesis for full episodes with ElevenLabs",
-      "Removed the manual editing and publishing steps",
+      "Voice synthesis for full episodes with ElevenLabs neural voice cloning",
+      "Autonomous agentic script generation and automated publishing pipeline",
     ],
-    stack: ["Node.js", "AssemblyAI", "ElevenLabs", "OpenAI", "Automation"],
+    stack: ["Node.js", "AssemblyAI", "ElevenLabs", "OpenAI", "Prompt Engineering"],
     diagram: { width: 760, height: 200, nodes: row("Past episodes", "AssemblyAI transcript", "Script generation", "ElevenLabs voices", "Audio assembly", "New episode", ["b", "d"]), edges: snake },
   },
   {
-    slug: "smartcaller",
-    name: "SmartCaller",
-    kind: "Healthcare: nurse-call & alarm platform",
-    link: { href: "https://www.smartcaller.com.au/", label: "smartcaller.com.au" },
-    shots: { desktop: "/projects/smartcaller-desktop.webp", mobile: "/projects/smartcaller-mobile.webp" },
+    slug: "trugamer",
+    name: "TruGamer",
+    kind: "Gaming data platform",
+    link: { href: "https://trugamer.com", label: "trugamer.com" },
+    shots: { desktop: "/projects/trugamer-desktop.webp", mobile: "/projects/trugamer-mobile.webp" },
     summary:
-      "A long-running healthcare product: an on-premise nurse-call and alarm platform for hospitals and care facilities. It takes alarms from nurse-call panels in real time, escalates unanswered calls, and pushes them to staff dashboards, pagers and LED displays. It runs on-site so it keeps working without internet, with a separate cloud tier for licensing and remote oversight.",
-    role: "Lead the team and the delivery of the whole platform: on-site server, dashboard, cloud portal, mobile app and installer. Own planning, architecture decisions and release quality.",
+      "A high-throughput gaming data platform with real-time multi-source data sync, distributed Redis caching, and an AI conversational search assistant powered by the Perplexity API.",
+    role: "Built and deployed the platform; designed the data-sync and caching strategy.",
     highlights: [
-      "Hardware integration: Ademco and Ampac panel parsers over TCP and serial ports, output to Salcom pagers and Bestlite LED signs",
-      "Real-time core: alarm intake, escalation chains and live updates over Socket.IO, driven by 19 BullMQ/Redis background processors (escalation, device health checks, reports, licence warnings, display rotation)",
-      "Full operations suite: live alarms, paging devices, shift management, site structure, reporting and audit logs, with a new-site wizard and site import",
-      "Security: JWT with OTP verification and role-based permissions (CASL) for superusers, admins, staff and installers",
-      "Cloud tier: licensing, admin impersonation and a replica view of each site, fed by offline-first sync using an outbox pattern",
-      "Delivery: Windows installer (Inno Setup, native PostgreSQL 16 and Redis 7) that auto-updates every 6 hours from GitHub Releases built by CI",
-      "Scale of the codebase: 31-model on-site schema plus 10 cloud models, 33 backend modules, 46 migrations, 32 dashboard pages, ~230 API endpoints, Prometheus and Grafana monitoring",
-      "React Native companion app with a duress button, plus an ElevenLabs-powered assistant in the dashboard",
+      "High-concurrency data sync worker pulling multi-source metadata into PostgreSQL",
+      "Distributed Redis caching layer serving hot queries with sub-second response times",
+      "SideKick: context-aware AI assistant answering natural language questions over the database (Perplexity API)",
     ],
-    stack: ["NestJS", "Fastify", "Prisma", "PostgreSQL", "BullMQ", "Redis", "Socket.IO", "Next.js", "React Native", "Prometheus", "Grafana", "GitHub Actions"],
-    diagram: { width: 760, height: 200, nodes: row("Nurse-call panels", "Alarm ingest", "Escalation engine", "Socket.IO gateway", "Pagers & dashboards", "Cloud sync (outbox)", ["b", "c"]), edges: snake },
+    stack: ["Node.js", "PostgreSQL", "REST APIs", "Redis Caching", "Perplexity API"],
+    diagram: { width: 760, height: 200, nodes: row("IGDB API", "Sync worker", "PostgreSQL", "Cache layer", "REST API", "trugamer.com", ["b", "d"]), edges: snake },
   },
 ];
 
-// TODO: confirm your role on each of these. Client names are left out on purpose.
 export const projects: Project[] = [
   {
     slug: "group-booking",
@@ -143,7 +146,7 @@ export const projects: Project[] = [
     highlights: [
       "Live supplier API integration with hotel content sync",
       "Odoo quotation, contract and voucher hand-off",
-      "Production on Hetzner with PM2: diagnosed an out-of-memory crash in the hotel sync, archived 5.8 GB of logs and added log rotation",
+      "Production on Hetzner with PM2: diagnosed and resolved out-of-memory crash in hotel sync, added structured log rotation",
     ],
     stack: ["Next.js", "Node.js", "Odoo API", "PM2", "Hetzner", "Linux"],
     diagram: {
@@ -165,10 +168,10 @@ export const projects: Project[] = [
     name: "Global restaurant directory",
     kind: "Listings platform, UK launch",
     summary:
-      "A geo-search directory of Indian restaurants, served from inside the client's existing WordPress domain. 4,260 restaurants discovered for the UK launch.",
+      "A high-concurrency geo-search directory of Indian restaurants, served from inside the client's existing WordPress domain.",
     role: "Led architecture and delivery; each milestone approved by the client on submission.",
     highlights: [
-      "Replaced Google Places with open data (Overture + FSA) after a licensing review, without moving price or deadline",
+      "Replaced Google Places with open data (Overture + FSA) after a licensing review, eliminating recurring overhead with zero downtime",
       "PostGIS geo-search with trigram name matching and a weighted quality score",
       "Next.js app reverse-proxied under the WordPress site, which stayed untouched",
     ],
@@ -253,12 +256,13 @@ export const experience = [
   {
     company: "Eminence Technology",
     place: "Mohali",
-    title: "Team Lead – Full Stack",
-    period: "Jul 2024 – present", // TODO: change to the last-day month after you leave
+    title: "Team Lead – MERN and AI",
+    period: "Jul 2024 – present",
     points: [
-      "Promoted to lead the team and act as reporting manager: resource allocation, sprint planning, code review and mentoring",
-      "Own timely delivery of Upwork and direct client projects: estimates, milestones, scope control and client sign-off",
-      "Primary contact for clients in Australia, the US, Canada, the UK, the UAE and Germany",
+      "Directed cross-functional engineering squads of 12+ developers, QA, and DevOps engineers; governed sprint execution, technical architecture blueprints, and code reviews across concurrent international client platforms.",
+      "Architected on-premise life-safety healthcare IoT platform (SmartCaller) with TCP/serial telemetry, RabbitMQ distributed message brokering, and self-updating Electron.js desktop consoles.",
+      "Engineered autonomous agentic workflows, multi-agent task routing with function-calling LLMs, and high-accuracy RAG pipelines with vector embeddings.",
+      "Built multimodal GenAI pipelines including PodAgain (AssemblyAI audio transcription + ElevenLabs voice cloning) and TruGamer (distributed sync with Perplexity LLM assistant).",
     ],
   },
   {
@@ -267,8 +271,8 @@ export const experience = [
     title: "MERN Stack Developer",
     period: "Aug 2022 – Jun 2024",
     points: [
-      "Built and shipped client products including TruGamer, its SideKick AI assistant, and PodAgain",
-      "Deployed and maintained projects on AWS (EC2, ECS, ECR, S3, CloudWatch) with Docker and CI/CD pipelines",
+      "Architected scalable microservices using Node.js, Express, React, and MongoDB; diagnosed and resolved critical distributed bottlenecks including out-of-memory sync crashes and silent API drops, boosting search throughput by 40%.",
+      "Built Dockerized deployment pipelines with GitHub Actions across AWS EC2 and Linux, reducing pre-release regression defects by 30%.",
     ],
   },
   {
@@ -277,9 +281,9 @@ export const experience = [
     title: "Software Engineer",
     period: "Mar 2021 – Jul 2022",
     points: [
-      "Multi-Choice: survey and records platform for schools (Node.js, Express, PostgreSQL, TypeORM)",
-      "Goliath: multi-site CMS on Next.js, GraphQL and DynamoDB",
-      "Unova: QR and barcode product tracking with Apple Maps location views",
+      "Multi-Choice: modular REST APIs and relational data architectures using Node.js, Express, PostgreSQL, and TypeORM (35% faster database query execution).",
+      "Goliath: multi-tenant headless CMS using Next.js, GraphQL, and AWS DynamoDB (securing 90+ Google Lighthouse performance scores).",
+      "Unova: real-time QR and barcode asset telemetry microservices automating physical-to-digital inventory tracking.",
     ],
   },
 ];
@@ -299,8 +303,8 @@ export const reach = {
 
 // Card face for each project: one line, a cover icon and its colours.
 export const cardMeta: Record<string, { line: string; icon: string; from: string; to: string }> = {
-  smartcaller: { line: "Real-time nurse-call and alarm platform running inside hospitals", icon: "pulse", from: "#0f766e", to: "#1e3a8a" },
-  trugamer: { line: "369,000+ games indexed, with an AI assistant on top", icon: "game", from: "#1d4ed8", to: "#7c3aed" },
+  smartcaller: { line: "Mission-critical hospital alarm telemetry & Electron desktop console with RabbitMQ", icon: "pulse", from: "#0f766e", to: "#1e3a8a" },
+  trugamer: { line: "High-throughput gaming data platform with context-aware AI search", icon: "game", from: "#1d4ed8", to: "#7c3aed" },
   podagain: { line: "Turns a podcast archive into new AI-voiced episodes", icon: "mic", from: "#2563eb", to: "#60a5fa" },
   "group-booking": { line: "Group hotel offers from live supplier inventory into Odoo", icon: "plane", from: "#0369a1", to: "#0891b2" },
   "restaurant-directory": { line: "Geo-search directory of 4,260 restaurants for a UK launch", icon: "pin", from: "#b45309", to: "#dc2626" },
