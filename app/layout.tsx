@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Samay Nandan, Technical Project Manager & Engineering Lead, Full Stack, Generative AI",
+  title: "Samay Nandan | Team Lead – MERN & AI | Distributed Systems Architect",
   description:
-    "Technical Project Manager and Team Lead: requirement analysis, project delivery, resource planning, Agile, client management. Full stack Node.js, React, Next.js, AWS and generative AI products. Based in Chandigarh Tricity, open to remote work.",
+    "Engineering Team Lead and Full-Stack Architect with 6 years of experience: Distributed Systems, RabbitMQ, Electron.js, Node.js, React, AWS, Generative AI & Agentic Workflows. Based in Chandigarh Tricity, open to remote / hybrid.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

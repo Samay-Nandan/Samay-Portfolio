@@ -18,9 +18,9 @@ export const stories: Story[] = [
     problem:
       "Nurse-call alarms are life-critical. A cloud-first design meant one dropped connection could leave a patient's call unanswered, and every site ran different panel hardware.",
     solution:
-      "Kept the whole alarm path on-site: panel parsers over TCP and serial, Redis-backed escalation workers that re-route unanswered calls, live dashboards over Socket.IO. The cloud only receives data through an outbox that syncs whenever the line is up.",
+      "Kept the whole alarm path on-premise: panel telemetry parsers over TCP and serial, RabbitMQ distributed message brokering, Redis/BullMQ escalation workers, self-updating Electron.js desktop consoles, and live dashboards over Socket.IO. The cloud only receives administrative data through an offline-first outbox sync.",
     result:
-      "Alarms keep flowing with the internet down. Sites install from a Windows package and update themselves every 6 hours from CI releases.",
+      "Alarms flow with sub-second failover and zero message loss even with the internet down. Hospital sites run native Electron desktop consoles that update automatically from CI releases.",
   },
   {
     slug: "amplify-investigation",
@@ -69,12 +69,12 @@ export const stories: Story[] = [
   {
     slug: "trugamer",
     tag: "Scale · Data",
-    title: "369,000 games without hammering the source API",
+    title: "High-throughput data sync without hitting upstream rate limits",
     problem:
-      "Every page on a gaming platform needs fresh metadata from a rate-limited upstream API, for hundreds of thousands of titles.",
+      "Every page on a high-concurrency gaming platform needs fresh metadata from rate-limited upstream APIs across millions of queries.",
     solution:
-      "Moved to a sync-and-cache design: workers pull IGDB data into PostgreSQL, a cache layer serves hot queries, and an AI assistant answers questions from the same data.",
-    result: "369,000+ games indexed and served fast, with upstream calls cut to the sync jobs.",
+      "Architected a high-throughput multi-source sync engine with a distributed Redis caching layer to serve hot queries instantly, paired with an AI conversational assistant (Perplexity API) querying context over PostgreSQL.",
+    result: "High-concurrency platform serving millions of requests fast with upstream calls cut to scheduled background sync jobs.",
   },
 ];
 
